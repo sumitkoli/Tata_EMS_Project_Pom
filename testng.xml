@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Tata_EMS_Suite">
+
+<listeners>
+<listener class-name="Utilities.Extent_ListnerClass"></listener>
+</listeners>
+  <test thread-count="5" name="Tata_EMS_Test">
+    <classes>
+      <class name="tata_EMS_Project_Test_Cases.Login_Test"/>
+    </classes>
+  </test> <!-- Tata_EMS_Test -->
+</suite> <!-- Tata_EMS_Suite -->
