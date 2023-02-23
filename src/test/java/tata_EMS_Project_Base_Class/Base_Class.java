@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -28,10 +30,12 @@ public class Base_Class {
 	public ReadConfig readconfig;
 	public static WebDriver driver;
 	public String browser;
+	public Logger log;
 
 	@BeforeMethod
 	public void applicationSetup() throws IOException {
 		readconfig = new ReadConfig();
+		log= LogManager.getLogger("Logs");
 
 		browser = readconfig.getbrowser();
 
@@ -39,16 +43,19 @@ public class Base_Class {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			log.info("Chrome Browser Started Successfully");
 			break;
 
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+			log.info("FireFox Browser Started Successfully");
 			break;
 
 		case "msedge":
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
+			log.info("Edge Browser Started Successfully");
 			break;
 
 		default:
@@ -61,8 +68,10 @@ public class Base_Class {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		String url=readconfig.geturl();
-
+		
 		driver.get(url);
+		
+		log.info("URL Opened Successfully");
 
 		loginpage = new Login_Page(driver);
 	
@@ -71,25 +80,9 @@ public class Base_Class {
 	@AfterMethod
 	public void applicationClose() {
 		driver.quit();
+		log.info("Browser Closed Successfully");
 
 	}
 	
-	public static String getScreenshotPath(String TestCaseName, WebDriver driver) throws IOException {
-		  TakesScreenshot ts=(TakesScreenshot)driver;
-	  
-	  File source=ts.getScreenshotAs(OutputType.FILE);
-	  
-	 // String destPath=System.getProperty("user.dir")+"\\Reports1\\"+TestCaseName+".png";
-	  
-	  String destPath=".//Reports//Screenshots//"+TestCaseName+".png"; 
-	  
-	  File file=new File(destPath); 
-	  
-	  FileUtils.copyFile(source, file); 
-	  
-	  return destPath;
-	  
-	  }
-
 }
 

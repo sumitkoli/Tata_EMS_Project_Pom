@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" strict="true">
+	<Appenders>
+		<Appender type="Console" name="STDOUT">
+			<Layout type="PatternLayout"
+				pattern="%d{HH:mm:ss.SSS} [%t]%-5level %logger{36} - %msg%n" />
+		</Appender>
+
+		<Appender type="File" name="file" fileName="C:\Users\lenovo\eclipse-workspace1\Tata_EMS_Project\LogFiles\app.log">
+			<Layout type="PatternLayout"
+				pattern="%d{HH:mm:ss.SSS} [%t]%-5level %logger{36} - %msg%n" />
+		</Appender>
+	</Appenders>
+
+
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="file" />
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>

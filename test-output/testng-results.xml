@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-21T18:50:50 IST" name="Tata_EMS_Suite" finished-at="2023-02-21T18:51:33 IST" duration-ms="43539">
+  <suite started-at="2023-02-23T13:09:52 IST" name="Tata_EMS_Suite" finished-at="2023-02-23T13:10:33 IST" duration-ms="40875">
     <groups>
     </groups>
-    <test started-at="2023-02-21T18:50:50 IST" name="Tata_EMS_Test" finished-at="2023-02-21T18:51:33 IST" duration-ms="43539">
+    <test started-at="2023-02-23T13:09:52 IST" name="Tata_EMS_Test" finished-at="2023-02-23T13:10:33 IST" duration-ms="40875">
       <class name="tata_EMS_Project_Test_Cases.Login_Test">
-        <test-method is-config="true" signature="applicationSetup()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@738dc9b]" started-at="2023-02-21T18:50:51 IST" name="applicationSetup" finished-at="2023-02-21T18:51:10 IST" duration-ms="19038" status="PASS">
+        <test-method is-config="true" signature="applicationSetup()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@63376bed]" started-at="2023-02-23T13:09:53 IST" name="applicationSetup" finished-at="2023-02-23T13:10:08 IST" duration-ms="15331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applicationSetup -->
-        <test-method signature="Test01_Verifying_login_with_InValidDetails()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@738dc9b]" started-at="2023-02-21T18:51:10 IST" name="Test01_Verifying_login_with_InValidDetails" finished-at="2023-02-21T18:51:11 IST" duration-ms="1543" status="FAIL">
+        <test-method signature="Test01_Verifying_login_with_InValidDetails()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@63376bed]" started-at="2023-02-23T13:10:08 IST" name="Test01_Verifying_login_with_InValidDetails" finished-at="2023-02-23T13:10:10 IST" duration-ms="1457" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [https://staging.netscribes.co/tata_ems_testing/admin/d2b5316eadb139ea4a091aeca9ec5bd3] but found [https://staging.netscribes.co/tata_ems_testing/admin/dashboard]]]>
@@ -24,7 +24,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 at org.testng.Assert.assertEquals(Assert.java:122)
 at org.testng.Assert.assertEquals(Assert.java:629)
 at org.testng.Assert.assertEquals(Assert.java:639)
-at tata_EMS_Project_Test_Cases.Login_Test.Test01_Verifying_login_with_InValidDetails(Login_Test.java:32)
+at tata_EMS_Project_Test_Cases.Login_Test.Test01_Verifying_login_with_InValidDetails(Login_Test.java:39)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,19 +59,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test01_Verifying_login_with_InValidDetails -->
-        <test-method is-config="true" signature="applicationClose()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@738dc9b]" started-at="2023-02-21T18:51:12 IST" name="applicationClose" finished-at="2023-02-21T18:51:14 IST" duration-ms="2247" status="PASS">
+        <test-method is-config="true" signature="applicationClose()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@63376bed]" started-at="2023-02-23T13:10:10 IST" name="applicationClose" finished-at="2023-02-23T13:10:13 IST" duration-ms="2227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applicationClose -->
-        <test-method is-config="true" signature="applicationSetup()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@738dc9b]" started-at="2023-02-21T18:51:14 IST" name="applicationSetup" finished-at="2023-02-21T18:51:27 IST" duration-ms="13187" status="PASS">
+        <test-method is-config="true" signature="applicationSetup()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@63376bed]" started-at="2023-02-23T13:10:13 IST" name="applicationSetup" finished-at="2023-02-23T13:10:23 IST" duration-ms="10450" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applicationSetup -->
-        <test-method signature="Test01_Verifying_login_with_ValidDetails()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@738dc9b]" started-at="2023-02-21T18:51:27 IST" name="Test01_Verifying_login_with_ValidDetails" finished-at="2023-02-21T18:51:32 IST" duration-ms="4255" status="PASS">
+        <test-method signature="Test01_Verifying_login_with_ValidDetails()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@63376bed]" started-at="2023-02-23T13:10:23 IST" name="Test01_Verifying_login_with_ValidDetails" finished-at="2023-02-23T13:10:30 IST" duration-ms="7056" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test01_Verifying_login_with_ValidDetails -->
-        <test-method is-config="true" signature="applicationClose()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@738dc9b]" started-at="2023-02-21T18:51:32 IST" name="applicationClose" finished-at="2023-02-21T18:51:33 IST" duration-ms="1698" status="PASS">
+        <test-method is-config="true" signature="applicationClose()[pri:0, instance:tata_EMS_Project_Test_Cases.Login_Test@63376bed]" started-at="2023-02-23T13:10:30 IST" name="applicationClose" finished-at="2023-02-23T13:10:33 IST" duration-ms="2860" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applicationClose -->
