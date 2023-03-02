@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tata_EMS_Project_Test_Cases.Login_Test">
+      <class name="tata_EMS_Project_Test_Cases.Forgot_Password_Test">
         <methods>
           <include name="applicationClose"/>
-          <include name="Test01_Verifying_login_with_ValidDetails"/>
           <include name="applicationSetup"/>
+          <include name="Test07_Verifying_Forgot_Password_with_InvalidEmail"/>
         </methods>
-      </class> <!-- tata_EMS_Project_Test_Cases.Login_Test -->
+      </class> <!-- tata_EMS_Project_Test_Cases.Forgot_Password_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

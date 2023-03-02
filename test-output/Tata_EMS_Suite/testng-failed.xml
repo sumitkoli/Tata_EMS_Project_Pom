@@ -8,9 +8,10 @@
     <classes>
       <class name="tata_EMS_Project_Test_Cases.Login_Test">
         <methods>
-          <include name="Test01_Verifying_login_with_InValidDetails"/>
+          <include name="Test01_Verifying_login_with_InvalidEmail_ValidPassword"/>
           <include name="applicationClose"/>
           <include name="applicationSetup"/>
+          <include name="Test01_Verifying_login_with_InvalidEmail_InvalidPassword"/>
         </methods>
       </class> <!-- tata_EMS_Project_Test_Cases.Login_Test -->
     </classes>

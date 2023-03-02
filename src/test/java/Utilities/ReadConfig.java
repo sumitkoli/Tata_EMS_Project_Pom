@@ -9,7 +9,7 @@ public class ReadConfig {
 
 	Properties properties;
 
-	String path = "C:\\Users\\lenovo\\eclipse-workspace1\\Tata_EMS_Project\\FIles\\config.properties";
+	String path = "C:\\Users\\lenovo\\eclipse-workspace1\\Tata_EMS_Project\\src\\main\\resource\\config.properties";
 
 	// constructor
 	public ReadConfig() throws IOException {

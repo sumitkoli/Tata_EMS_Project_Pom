@@ -12,8 +12,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 
 import java.io.File;
@@ -21,12 +24,14 @@ import java.io.File;
 import Utilities.Extent_ListnerClass;
 import Utilities.ReadConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import tata_EMS_Project_Page_Object.Forgot_Password_Page;
 import tata_EMS_Project_Page_Object.Login_Page;
 
 @Listeners(Extent_ListnerClass.class)
 public class Base_Class {
 
 	public Login_Page loginpage;
+	public Forgot_Password_Page forgotpasspage;
 	public ReadConfig readconfig;
 	public static WebDriver driver;
 	public String browser;
@@ -74,6 +79,7 @@ public class Base_Class {
 		log.info("URL Opened Successfully");
 
 		loginpage = new Login_Page(driver);
+		forgotpasspage= new Forgot_Password_Page(driver);
 	
 	}
 
@@ -83,6 +89,8 @@ public class Base_Class {
 		log.info("Browser Closed Successfully");
 
 	}
+	
+	
 	
 }
 

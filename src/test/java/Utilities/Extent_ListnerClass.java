@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -11,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.App;
@@ -30,12 +32,14 @@ import tata_EMS_Project_Base_Class.Base_Class;
 public class Extent_ListnerClass extends Base_Class implements ITestListener {
 
 	String concatenate = ".";
+	String failedTestCaseName;
+	String skipTestCaseName;
 	ExtentSparkReporter htmlReporter;
 	static ExtentReports reports;
 	static ExtentTest test;
 	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
-	//Extent Report
+	// Extent Report
 	public void configureReport() throws IOException {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy-HH-mm-ss");
@@ -62,7 +66,8 @@ public class Extent_ListnerClass extends Base_Class implements ITestListener {
 		htmlReporter.config().setTheme(Theme.DARK);
 
 	}
-	//Capturing Screenshot
+
+	// Capturing Screenshot
 	public String screshot(String TestCaseName) {
 
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -84,15 +89,15 @@ public class Extent_ListnerClass extends Base_Class implements ITestListener {
 		return screenshotpath;
 	}
 
-	//Attaching screenshot at Log level
+	// Attaching screenshot at Log level
 	public static Object screencapture(String logDetails, String imagepath) {
 		test.log(Status.INFO, logDetails, MediaEntityBuilder.createScreenCaptureFromPath(imagepath).build());
 		return test;
 	}
 
-	//concatenating the screenshot path
+	// concatenating the screenshot path
 	public void failscreenshot(String name) {
-		String screenshotname = concatenate+screshot(name);
+		String screenshotname = concatenate + screshot(name);
 		screencapture("Defect", screenshotname);
 	}
 
@@ -117,6 +122,7 @@ public class Extent_ListnerClass extends Base_Class implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		System.out.println("Failure of test cases and its details are : " + result.getName());
+		failedTestCaseName = result.getName();
 		test = reports.createTest(result.getName());
 		test.log(Status.FAIL,
 				MarkupHelper.createLabel("Name of the Failed test case is:" + result.getName(), ExtentColor.RED));
@@ -129,10 +135,22 @@ public class Extent_ListnerClass extends Base_Class implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		System.out.println("Skip of test cases and its details are : " + result.getName());
-		test = reports.createTest(result.getName());
-		test.log(Status.SKIP,
-				MarkupHelper.createLabel("Name of the Skip test case is:" + result.getName(), ExtentColor.YELLOW));
+		
+		/*
+		 * if(result.wasRetried()) {
+		 * log.info("***** Retried "+result.getName()+" test has failed *****");
+		 * System.out.println("***** Retried " + result.getName());
+		 * 
+		 * }
+		 */
+		// else
+		//	System.out.println("Skip of test cases and its details are : " + result.getName());
+			
+		/*
+		 * test = reports.createTest(result.getName()); test.log(Status.SKIP,
+		 * MarkupHelper.createLabel("Name of the Skip test case is:" + result.getName(),
+		 * ExtentColor.YELLOW));
+		 */
 	}
 
 	@Override
@@ -156,7 +174,10 @@ public class Extent_ListnerClass extends Base_Class implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
+		
 		System.out.println("Name of Test Finish : " + context.getName());
 		reports.flush();
 	}
+	        
+	
 }

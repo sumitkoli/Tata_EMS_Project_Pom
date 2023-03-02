@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Tata_EMS_Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="Utilities.Extent_ListnerClass"/>
-  </listeners>
-  <test thread-count="5" name="Tata_EMS_Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tata_EMS_Project_Test_Cases.Login_Test">
+      <class name="tata_EMS_Project_Test_Cases.Forgot_Password_Test">
         <methods>
-          <include name="Test01_Verifying_login_with_InValidDetails"/>
           <include name="applicationClose"/>
           <include name="applicationSetup"/>
+          <include name="Test07_Verifying_Forgot_Password_with_InvalidEmail"/>
         </methods>
-      </class> <!-- tata_EMS_Project_Test_Cases.Login_Test -->
+      </class> <!-- tata_EMS_Project_Test_Cases.Forgot_Password_Test -->
     </classes>
-  </test> <!-- Tata_EMS_Test(failed) -->
-</suite> <!-- Failed suite [Tata_EMS_Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
