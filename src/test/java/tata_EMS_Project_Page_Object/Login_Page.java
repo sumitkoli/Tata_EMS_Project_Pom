@@ -51,6 +51,7 @@ public class Login_Page extends Base_Class {
 		signInBtn.click();
 	}
 	
+	//Forgot Password Link
 	public Forgot_Password_Page clickon_forgotPasswordLink() {
 		forgotPassword.click();
 		return new Forgot_Password_Page(ldriver);
